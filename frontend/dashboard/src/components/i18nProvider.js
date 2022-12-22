@@ -1,7 +1,10 @@
 import polyglotI18nProvider from 'ra-i18n-polyglot';
+import en from 'ra-language-english';
+import et from 'ra-language-estonian';
+import ru from 'ra-language-russian';
 import englishMessages from './i18n/en';
 
-//const translations = { en, et, ru };
+const translations = { en, et, ru };
 
 const messages = {
     ru: () => import('./i18n/ru').then(messages => messages.default),
