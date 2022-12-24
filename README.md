@@ -34,10 +34,10 @@ pip install psycopg-binary
  ```
 For Frontend you only need these commands: <br />
 1. Install all dependencies
-```javascript
+```node
 npm install
  ```
 2. Start application
-```javascript
+```node
 npm start
  ```
