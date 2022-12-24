@@ -2,7 +2,7 @@
 
 #### FastAPI is used on the backend and React-Admin for frontend. For working with database(PostgreSQL) - SQLAlchemy. Tested on python 3.10. 
 
-In database.py check up your credentials for database. The database is located on the college server.
+In database.py check up your credentials for database. The database is located on the college server. Request access data.
 
 ```python
 # user 
@@ -11,7 +11,9 @@ POSTGRES_USER="user"
 POSTGRES_PASSWORD=password
 # host
 POSTGRES_SERVER="host"
+# port
 POSTGRES_PORT=5432
+# database name
 POSTGRES_DB="DB_Chemical_Warehouse"
 ```
 
