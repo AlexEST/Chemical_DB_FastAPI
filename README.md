@@ -21,23 +21,23 @@ For Backend you need install: <br />
 pip install "fastapi[all]"
  ```
 2. SQLAlchemy. Database Abstraction Library.
-```
+```python
 pip install SQLAlchemy
  ```
 3. Uvicorn to work as the server.
-```
+```python
 pip install "uvicorn[standard]"
  ```
 4. Psycopg-binary. PostgreSQL database adapter for Python -- C optimisation distribution.
-```
+```python
 pip install psycopg-binary
  ```
 For Frontend you only need these commands: <br />
 1. Install all dependencies
-```
+```javascript
 npm install
  ```
 2. Start application
-```
+```javascript
 npm start
  ```
