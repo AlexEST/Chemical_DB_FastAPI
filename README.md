@@ -17,7 +17,7 @@ POSTGRES_DB="DB_Chemical_Warehouse"
 
 For Backend you need install: <br />
 1. FastAPI framework.
-```
+```python
 pip install "fastapi[all]"
  ```
 2. SQLAlchemy. Database Abstraction Library.
