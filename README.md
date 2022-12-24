@@ -2,7 +2,7 @@
 
 #### FastAPI is used on the backend. Tested on python 3.10. 
 
-For Backend:
+For Backend: <br />
 1.FastAPI framework.
 ```
 pip install "fastapi[all]"
