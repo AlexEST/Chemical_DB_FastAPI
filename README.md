@@ -34,7 +34,7 @@ pip install "uvicorn[standard]"
 ```python
 pip install psycopg-binary
  ```
-For Frontend you only need these commands: <br />
+For Frontend you need install nodejs and these commands: <br />
 1. Install all dependencies
 ```
 npm install
