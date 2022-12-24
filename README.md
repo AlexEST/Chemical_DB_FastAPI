@@ -3,11 +3,11 @@
 #### FastAPI is used on the backend. Tested on python 3.10. 
 
 For Backend: <br />
-1.FastAPI framework.
+1. FastAPI framework.
 ```
 pip install "fastapi[all]"
  ```
-2.SQLAlchemy. Database Abstraction Library.
+2. SQLAlchemy. Database Abstraction Library.
 ```
 pip install SQLAlchemy
  ```
