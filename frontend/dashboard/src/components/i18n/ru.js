@@ -12,7 +12,8 @@ export const messages = {
                 type: 'Тип операции',
                 amount: 'Количество',
                 date: 'Дата',
-                createTitle: 'Добавление новой операции'
+                createTitle: 'Добавление новой операции',
+                columns:'КОЛОНКИ'
             },
         },
         substances: {

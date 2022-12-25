@@ -10,6 +10,7 @@
     "ra-i18n-polyglot": "^4.6.2",
     "ra-language-english": "^4.6.2",
     "ra-language-estonian": "^0.2.0",
+    "ra-language-french": "^4.6.2",
     "ra-language-russian": "^3.13.5",
     "react": "^18.2.0",
     "react-admin": "^4.6.2",

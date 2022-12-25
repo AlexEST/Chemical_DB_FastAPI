@@ -1,16 +1,18 @@
 import React from 'react';
-import { List, Datagrid, TextField, FunctionField, Pagination, EditButton} from 'react-admin';
-import { SearchInput, TextInput } from 'react-admin';
+import { List, TextField, FunctionField, Pagination, EditButton,  DatagridConfigurable } from 'react-admin';
+import { TextInput } from 'react-admin';
+
 
 const PostPagination = props => <Pagination rowsPerPageOptions={[5, 10, 25, 50]} {...props} />;
 
-const postFilters = [
+const OperationFilters = [
   <TextInput label='resources.operations.fields.name' source="name" alwaysOn />,
 ];
 
+
 const OperationsList = (props) => (
-  <List {...props} pagination={<PostPagination />} filters={postFilters}  >
-    <Datagrid>
+  <List {...props} pagination={<PostPagination />} filters={OperationFilters}  >
+    <DatagridConfigurable >
       <TextField source='id'  />
       <TextField source='substance.name' label="resources.operations.fields.name"  fullWidth/>
       <FunctionField
@@ -23,7 +25,7 @@ const OperationsList = (props) => (
       <TextField source='amount'  />
       <TextField source='date'  />  
       <EditButton/>  
-    </Datagrid>
+    </DatagridConfigurable>
   </List>
 );
 

@@ -12,7 +12,8 @@ export const messages = {
                 type: 'Operatsiooni tüüp',
                 amount: 'Kogus',
                 date: 'Kuupäev',
-                createTitle: 'Uue operatsiooni loomine'
+                createTitle: 'Uue operatsiooni loomine',
+                columns: 'VEERUD'
             },
         },
         substances: {

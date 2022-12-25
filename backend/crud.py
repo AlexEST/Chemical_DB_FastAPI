@@ -23,6 +23,9 @@ def get_users(db: Session):
     return db.query(models.User).all()
 
 
+def get_users_count(db: Session):
+    return db.query(models.User).count()
+
 def get_amount(db: Session, list, skip: int, limit: int):
     if list is not None:
         if list[0] == "id":
@@ -49,6 +52,34 @@ def get_amount(db: Session, list, skip: int, limit: int):
             if list[1] == "DESC":
                 return db.query(models.Stock_Amount).order_by(models.Stock_Amount.amount.desc()).offset(skip).limit(limit).all() 
     return db.query(models.Stock_Amount).offset(skip).limit(limit).all()
+
+def get_amount_by_substance(db: Session, substance: str, list, skip: int, limit: int):
+    if list is not None:
+        if list[0] == "id":
+            if list[1] == "ASC":
+                return db.query(models.Stock_Amount).filter(models.Stock_Amount.name == substance).order_by(models.Stock_Amount.id.asc()).offset(skip).limit(limit).all() 
+            if list[1] == "DESC":
+                return db.query(models.Stock_Amount).filter(models.Stock_Amount.name == substance).order_by(models.Stock_Amount.id.desc()).offset(skip).limit(limit).all() 
+        
+        if list[0] == "name":
+            if list[1] == "ASC":
+                return db.query(models.Stock_Amount).filter(models.Stock_Amount.name == substance).order_by(models.Stock_Amount.name.asc()).offset(skip).limit(limit).all() 
+            if list[1] == "DESC":
+                return db.query(models.Stock_Amount).filter(models.Stock_Amount.name == substance).order_by(models.Stock_Amount.name.desc()).offset(skip).limit(limit).all() 
+        
+        if list[0] == "units":
+            if list[1] == "ASC":
+                return db.query(models.Stock_Amount).filter(models.Stock_Amount.name == substance).order_by(models.Stock_Amount.units.asc()).offset(skip).limit(limit).all() 
+            if list[1] == "DESC":
+                return db.query(models.Stock_Amount).filter(models.Stock_Amount.name == substance).order_by(models.Stock_Amount.units.desc()).offset(skip).limit(limit).all() 
+       
+        if list[0] == "amount":
+            if list[1] == "ASC":
+                return db.query(models.Stock_Amount).filter(models.Stock_Amount.name == substance).order_by(models.Stock_Amount.amount.asc()).offset(skip).limit(limit).all() 
+            if list[1] == "DESC":
+                return db.query(models.Stock_Amount).filter(models.Stock_Amount.name == substance).order_by(models.Stock_Amount.amount.desc()).offset(skip).limit(limit).all() 
+    return db.query(models.Stock_Amount).filter(models.Stock_Amount.name == substance).offset(skip).limit(limit).all()
+
 
 def get_amount_substance(substance: str, db: Session):
     return db.query(models.Stock_Amount).filter(models.Stock_Amount.name == substance).first()

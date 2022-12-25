@@ -64,12 +64,12 @@ async def login(response: Response, user: user.UserCheck, db: Session = Depends(
 
     return {"username": user.username , "fullName": {User.name +' '+ User.surname}}
 
-@app.get("/users/", response_model=List[user.UserShow])
+@app.get("/users", response_model=List[user.UserShow])
 def read_users(response: Response, db: Session = Depends(get_db)):
     users = crud.get_users(db)
-    usersLen = str(len(users))
+    usersLen = crud.get_users_count(db)
     response.headers['Access-Control-Expose-Headers'] = 'X-Total-Count'
-    response.headers['X-Total-Count'] = usersLen
+    response.headers['X-Total-Count'] = str(usersLen)
     return users
 
 
@@ -78,6 +78,10 @@ def read_users(response: Response, db: Session = Depends(get_db)):
 def get_Stock(request: Request,  response: Response, skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     orderList = request.query_params.get('sort')
     rangeList = request.query_params.get('range')
+    filterList = request.query_params.get('filter')
+    if filterList is not None:
+        filterList = json.loads(request.query_params.get('filter'))
+        filt = filterList.get('name')  
     if orderList is not None:
         orderList = json.loads(request.query_params.get('sort')) 
     else:
@@ -86,7 +90,13 @@ def get_Stock(request: Request,  response: Response, skip: int = 0, limit: int =
         rangeList = json.loads(request.query_params.get('range')) 
         skip = rangeList[0]
         limit = (rangeList[1]+1) - skip
-    stock = crud.get_amount(db, orderList, skip=skip, limit=limit)
+    if filterList is not None and filt is not None:
+        filt = str(filt).capitalize()
+        stock = crud.get_amount_by_substance(db, substance=filt, list=orderList, skip=skip, limit=limit)
+        if stock is None:
+            stock = crud.get_amount(db, orderList, skip=skip, limit=limit)
+    else:
+        stock = crud.get_amount(db, orderList, skip=skip, limit=limit)
     stockLen = crud.get_stocks_count(db)
     response.headers['Access-Control-Expose-Headers'] = 'X-Total-Count'
     response.headers['X-Total-Count'] = str(stockLen)
