@@ -12,8 +12,7 @@ export const messages = {
                 type: 'Operation type',
                 amount: 'Amount',
                 date: 'Date',
-                createTitle: 'Creation of a new operation'
-                
+                createTitle: 'Creation of a new operation',
             },
         },
         substances: {
