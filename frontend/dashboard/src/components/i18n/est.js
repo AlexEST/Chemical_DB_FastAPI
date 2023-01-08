@@ -38,6 +38,14 @@ export const messages = {
                 units: 'Ühikud',
             },
         },
+        users: {
+            name: 'Kasutaja |||| Kasutajad',
+            fields: {
+                id: 'Id',
+                name: 'Nimi',
+                surname: 'Perekonnanimi',
+            },
+        },
     },
     
 };

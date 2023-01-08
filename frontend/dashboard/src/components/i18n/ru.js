@@ -38,6 +38,14 @@ export const messages = {
                 units: 'Ед. измерения',
             },
         },
+        users: {
+            name: 'Пользователь |||| Пользователи',
+            fields: {
+                id: 'Id',
+                name: 'Имя',
+                surname: 'Фамилия',
+            },
+        },
     },
     
 };

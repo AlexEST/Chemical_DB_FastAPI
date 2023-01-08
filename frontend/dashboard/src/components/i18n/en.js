@@ -37,6 +37,14 @@ export const messages = {
                 units: 'Units',
             },
         },
+        users: {
+            name: 'User |||| Users',
+            fields: {
+                id: 'Id',
+                name: 'Name',
+                surname: 'Surname',
+            },
+        },
     },
     
 
