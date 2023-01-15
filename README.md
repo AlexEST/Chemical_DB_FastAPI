@@ -37,9 +37,9 @@ pip install Psycopg-Binary
 For Frontend you need install nodejs and execute these commands in dashboard folder: <br />
 1. Install all dependencies
 ```javascript
-npm Install
+npm install
  ```
 2. Start application
-```
+```javascript
 npm start
  ```
