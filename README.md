@@ -32,12 +32,12 @@ pip install "uvicorn[standard]"
  ```
 4. Psycopg-binary. PostgreSQL database adapter for Python -- C optimisation distribution.
 ```python
-pip install psycopg-binary
+pip install Psycopg-Binary
  ```
 For Frontend you need install nodejs and execute these commands in dashboard folder: <br />
 1. Install all dependencies
 ```
-npm install
+npm Install
  ```
 2. Start application
 ```
